@@ -359,84 +359,278 @@
       </div>   
       <br>
       
-    <h3 class="title is-4">Application</h3>
-    <h4 class="title is-5">Language-guided Segmentation</h4>
-    <div class="content has-text-justified">
-      <p>
-        Language-guided segmentation results are provided as an application of our method, 
-        based on 2D language-guided segmentation method 
-        <a href="https://arxiv.org/abs/2304.10597">Text2Seg</a>. 
-      </p>
-    </div>
-    <div class="columns is-vcentered interpolation-panel">
-      <div class="column  has-text-centered">
-        <h4 class="title is-4">Text Prompt: <i>Blue Toy</i> </h4>
-          <div class="b-dics" style="width: 100%; font-weight: 600;">
-              <img src="static/videos/seg_office_gt.gif">
-              <img src="static/videos/seg_office.gif" >
-              <!-- <img src="static/videos/pano.gif" alt="Panoptic"> -->
-          </div>  
-      </div>
-      <div class="column has-text-centered">
-        <h4 class="title is-size-4">Text Prompt: <i>Potted Plant</i> </h4>
-        <div class="b-dics" style="width: 100%; font-weight: 600;">
-          <img src="static/videos/seg_room_gt.gif" >
-          <img src="static/videos/seg_room.gif" >
-          <!-- <img src="static/videos/pano.gif" alt="Panoptic"> -->
-        </div>
-      </div>
-    </div> 
-        
-    <h4 class="title is-5">Scene Manipulation</h4>
+      <h3 class="title is-4">Applications</h3>
+      <h4 class="title is-5">Language-guided Segmentation</h4>
       <div class="content has-text-justified">
         <p>
-          Scene manipulation results are provided as another application. 
+          Language-guided segmentation results are provided as an application of our method, 
+          based on 2D language-guided segmentation method 
+          <a href="https://arxiv.org/abs/2304.10597">Text2Seg</a>. 
         </p>
       </div>
       <div class="columns is-vcentered interpolation-panel">
         <div class="column  has-text-centered">
-          <h4 class="title is-4">Translating of Seat</h4>
+          <h4 class="title is-4">Text Prompt: <i>Blue Toy</i> </h4>
             <div class="b-dics" style="width: 100%; font-weight: 600;">
-                <img src="static/videos/edit_office_gt.gif">
-                <img src="static/videos/edit_office.gif" >
+                <img src="static/videos/seg_office_gt.gif">
+                <img src="static/videos/seg_office.gif" >
                 <!-- <img src="static/videos/pano.gif" alt="Panoptic"> -->
             </div>  
         </div>
         <div class="column has-text-centered">
-          <h4 class="title is-size-4">Removal of Stool</h4>
+          <h4 class="title is-size-4">Text Prompt: <i>Potted Plant</i> </h4>
           <div class="b-dics" style="width: 100%; font-weight: 600;">
-            <img src="static/videos/edit_room_gt.gif" >
-            <img src="static/videos/edit_room.gif" >
+            <img src="static/videos/seg_room_gt.gif" >
+            <img src="static/videos/seg_room.gif" >
             <!-- <img src="static/videos/pano.gif" alt="Panoptic"> -->
           </div>
         </div>
       </div> 
-    
-        <!-- <div class="column is-vcentered">
-          <div class="column  ">
-            <h4 class="title is-4">Language-guided Editing1</h4>
-            <video class="video" width="10%" id="xyalias1" loop playsinline autoplay muted src="static/videos/rgb_vs_feature2.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
-            <canvas height=0 class="videoMerge" id="xyalias1Merge"></canvas>
+          
+      <h4 class="title is-5">Scene Manipulation</h4>
+        <div class="content has-text-justified">
+          <p>
+            Scene manipulation results are provided as another application. 
+          </p>
+        </div>
+  
+      <h5 class="title is-6">Interactive & Detailed Results</h5>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-12 has-text-centered">
+            <div class="columns is-centered">
+              <div class="column is-4">
+                <img id = "output-office-gt"
+                  src="./static/editing/GT_office.png"
+                  alt="Translating-image-office-gt"
+                  class="image is-648x648"/>
+                <!-- <p class="has-text-centered has-text-weight-bold is-size-5">Before Manipulation</p> -->
+              </div>
+              <div class="column is-4">
+                <img id = "output-img1a1"
+                  src="./static/editing/GT_office.png"
+                  alt="Translating-image-office-group"
+                  class="image is-648x648"/>
+                <!-- <p class="has-text-centered has-text-weight-bold is-size-5">Gaussian Grouping</p> -->
+              </div>
+              <div class="column is-4">
+                <img id = "output-img1b1"
+                  src="./static/editing/GT_office.png"
+                  alt="Translating-image-office-ours"
+                  class="image is-648x648"/>
+                <!-- <p class="has-text-centered has-text-weight-bold is-size-5">Ours</p> -->
+              </div>
+            </div>
+  
+            <div class="columns is-centered">
+              <div class="column is-4">
+                <img id = "output-office-gt"
+                  src="./static/editing/GT_office_detail.png"
+                  alt="Translating-image-office-gt-detail"
+                  class="image is-648x648"/>
+                <p class="has-text-centered has-text-weight-bold is-size-5">Before Manipulation</p>
+              </div>
+              <div class="column is-4">
+                <img id = "output-img1a2"
+                  src="./static/editing/GT_office_detail.png"
+                  alt="Translating-image-office-group-detail"
+                  class="image is-648x648"/>
+                <p class="has-text-centered has-text-weight-bold is-size-5">Gaussian Grouping</p>
+              </div>
+              <div class="column is-4">
+                <img id = "output-img1b2"
+                  src="./static/editing/GT_office_detail.png"
+                  alt="Translating-image-office-ours-detail"
+                  class="image is-648x648"/>
+                <p class="has-text-centered has-text-weight-bold is-size-5">Ours</p>
+              </div>
+            </div>
+  
+            <div class="columns is-centered">
+              <div class="column is-3">
+                <button id="change-image-btn1" class="button is-medium is-info has-text-weight-bold">Translate</button> 
+              </div>
+              <div class="column is-3">
+                <button id="reset-image-btn1" class="button is-medium is-info has-text-weight-bold">Reset</button> 
+              </div>
+            </div>
+          
           </div>
-          <div class="column  ">
-            <h4 class="title is-4">Language-guided Editing2</h4>
-            <video class="video" width="10%" id="xyalias2" loop playsinline autoplay muted src="static/videos/rgb_vs_feature2.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
-            <canvas height=0 class="videoMerge" id="xyalias2Merge"></canvas>
+        </div> 
+  
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-12 has-text-centered">
+            <div class="columns is-centered">
+              <div class="column is-4">
+                <img id = "output-room-gt"
+                  src="./static/editing/GT_room.png"
+                  alt="Erasing-image-room-gt"
+                  class="image is-648x648"/>
+                <!-- <p class="has-text-centered has-text-weight-bold is-size-5">Before Manipulation</p> -->
+              </div>
+              <div class="column is-4">
+                <img id = "output-img2a1"
+                  src="./static/editing/GT_room.png"
+                  alt="Erasing-image-room-group"
+                  class="image is-648x648"/>
+                <!-- <p class="has-text-centered has-text-weight-bold is-size-5">Gaussian Grouping</p> -->
+              </div>
+              <div class="column is-4">
+                <img id = "output-img2b1"
+                  src="./static/editing/GT_room.png"
+                  alt="Erasing-image-room-ours"
+                  class="image is-648x648"/>
+                <!-- <p class="has-text-centered has-text-weight-bold is-size-5">Ours</p> -->
+              </div>
+            </div>
+  
+            <div class="columns is-centered">
+              <div class="column is-4">
+                <img id = "output-room-gt"
+                  src="./static/editing/GT_room_detail.png"
+                  alt="Erasing-image-room-gt-detail"
+                  class="image is-648x648"/>
+                <p class="has-text-centered has-text-weight-bold is-size-5">Before Manipulation</p>
+              </div>
+              <div class="column is-4">
+                <img id = "output-img2a2"
+                  src="./static/editing/GT_room_detail.png"
+                  alt="Erasing-image-room-group-detail"
+                  class="image is-648x648"/>
+                <p class="has-text-centered has-text-weight-bold is-size-5">Gaussian Grouping</p>
+              </div>
+              <div class="column is-4">
+                <img id = "output-img2b2"
+                  src="./static/editing/GT_room_detail.png"
+                  alt="Erasing-image-room-ours-detail"
+                  class="image is-648x648"/>
+                <p class="has-text-centered has-text-weight-bold is-size-5">Ours</p>
+              </div>
+            </div>
+  
+            <div class="columns is-centered">
+              <div class="column is-3">
+                <button id="change-image-btn2" class="button is-medium is-info has-text-weight-bold">Remove</button> 
+              </div>
+              <div class="column is-3">
+                <button id="reset-image-btn2" class="button is-medium is-info has-text-weight-bold">Reset</button> 
+              </div>
+            </div>
+          
           </div>
-          <div class="column ">
-            <h4 class="title is-4">Language-guided Editing3</h4>
-            <video class="video" width="10%" id="xyalias3" loop playsinline autoplay muted src="static/videos/rgb_vs_feature2.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
-            <canvas height=0 class="videoMerge" id="xyalias3Merge"></canvas>
+        </div> 
+  
+        <h5 class="title is-6">Multi-views' Results</h5>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column  has-text-centered">
+            <h4 class="title is-5">Translating of Seat</h4>
+              <div class="b-dics" style="width: 100%; font-weight: 600;">
+                  <img src="static/videos/edit_office_gt.gif">
+                  <img src="static/videos/edit_office.gif" >
+                  <!-- <img src="static/videos/pano.gif" alt="Panoptic"> -->
+              </div>  
           </div>
-          <div class="column ">
-            <h4 class="title is-4">Language-guided Editing4</h4>
-            <video class="video" width="10%" id="xyalias4" loop playsinline autoplay muted src="static/videos/rgb_vs_feature2.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
-            <canvas height=0 class="videoMerge" id="xyalias4Merge"></canvas>
-          </div> 
-         </div> -->
-  <!--/ Animation. -->
-    
-    <br>
+          <div class="column has-text-centered">
+            <h4 class="title is-size-5">Removal of Stool</h4>
+            <div class="b-dics" style="width: 100%; font-weight: 600;">
+              <img src="static/videos/edit_room_gt.gif" >
+              <img src="static/videos/edit_room.gif" >
+              <!-- <img src="static/videos/pano.gif" alt="Panoptic"> -->
+            </div>
+          </div>
+        </div> 
+  
+        <!-- <h4 class="title is-5">Erasing</h4>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-12 has-text-centered">
+            <img id = "output-img1"
+                src="./static/editing/before_erasing_office3.png"
+                alt="Erasing-image"
+                class="image is-648x648"/>
+          
+            <div class="columns is-centered">
+              <div class="column is-3">
+                <p class="has-text-centered has-text-weight-bold is-size-5">Before Manipulation</p>
+              </div>
+              <div class="column is-3">
+                <p class="has-text-centered has-text-weight-bold is-size-5">DM-NeRF</p>
+              </div>
+              <div class="column is-3">
+                <p class="has-text-centered has-text-weight-bold is-size-5">Ours (Erased)</p>
+              </div>
+              <div class="column is-3">
+                <p class="has-text-centered has-text-weight-bold is-size-5">Ours (Inpainted)</p>
+              </div>
+            </div>
+          
+            <div class="columns is-centered">
+              <div class="column is-3">
+                <button id="change-image-btn1" class="button is-medium is-info has-text-weight-bold">Erasing</button> 
+              </div>
+              <div class="column is-3">
+                <button id="reset-image-btn1" class="button is-medium is-info has-text-weight-bold">Reset</button> 
+              </div>
+            </div>
+          
+          </div>
+        </div> 
+  
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-12 has-text-centered">
+            <img id = "output-img2"
+                src="./static/editing/before_erasing_room0.png"
+                alt="Erasing-image"
+                class="image is-648x648"/>
+            <div class="columns is-centered">
+              <div class="column is-3">
+                <p class="has-text-centered has-text-weight-bold is-size-5">Before Manipulation</p>
+              </div>
+              <div class="column is-3">
+                <p class="has-text-centered has-text-weight-bold is-size-5">DM-NeRF</p>
+              </div>
+              <div class="column is-3">
+                <p class="has-text-centered has-text-weight-bold is-size-5">Ours (Erased)</p>
+              </div>
+              <div class="column is-3">
+                <p class="has-text-centered has-text-weight-bold is-size-5">Ours (Inpainted)</p>
+              </div>
+            </div>
+            <div class="columns is-centered">
+              <div class="column is-3">
+                <button id="change-image-btn2" class="button is-medium is-info has-text-weight-bold">Erasing</button> 
+              </div>
+              <div class="column is-3">
+                <button id="reset-image-btn2" class="button is-medium is-info has-text-weight-bold">Reset</button> 
+              </div>
+            </div>
+          </div>
+        </div>  -->
+  
+  
+          <!-- <div class="column is-vcentered">
+            <div class="column  ">
+              <h4 class="title is-4">Language-guided Editing1</h4>
+              <video class="video" width="10%" id="xyalias1" loop playsinline autoplay muted src="static/videos/rgb_vs_feature2.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+              <canvas height=0 class="videoMerge" id="xyalias1Merge"></canvas>
+            </div>
+            <div class="column  ">
+              <h4 class="title is-4">Language-guided Editing2</h4>
+              <video class="video" width="10%" id="xyalias2" loop playsinline autoplay muted src="static/videos/rgb_vs_feature2.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+              <canvas height=0 class="videoMerge" id="xyalias2Merge"></canvas>
+            </div>
+            <div class="column ">
+              <h4 class="title is-4">Language-guided Editing3</h4>
+              <video class="video" width="10%" id="xyalias3" loop playsinline autoplay muted src="static/videos/rgb_vs_feature2.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+              <canvas height=0 class="videoMerge" id="xyalias3Merge"></canvas>
+            </div>
+            <div class="column ">
+              <h4 class="title is-4">Language-guided Editing4</h4>
+              <video class="video" width="10%" id="xyalias4" loop playsinline autoplay muted src="static/videos/rgb_vs_feature2.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+              <canvas height=0 class="videoMerge" id="xyalias4Merge"></canvas>
+            </div> 
+           </div> -->
+    <!--/ Animation. -->
+      
+      <br>
 
     <!-- Concurrent Work. -->
     <div class="columns is-centered">
