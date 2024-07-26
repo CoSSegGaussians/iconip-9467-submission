@@ -6,7 +6,7 @@
         content=" Sparse Semantic Supervised Tensorial Radiance Field (3S-TensoRF)">
   <meta name="keywords" content="Semanrtic NeRF, 3S-TensoRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CoSSegGaussians: Compact and Swift Scene Segmenting 3D Gaussians with Dual Feature Fusion</title>
+  <title>Learning Segmented 3D Gaussians via Efficient Feature Unprojection for Zero-shot Neural Scene Segmentation</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -197,17 +197,14 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We propose Compact and Swift Segmenting 3D Gaussians(CoSSegGaussians), a method for compact 3D-consistent scene segmentation at fast rendering speed with only RGB images input. 
-            Previous NeRF-based segmentation methods have relied on time-consuming neural scene optimization. 
-            While recent 3D Gaussian Splatting has notably improved speed, existing Gaussian-based segmentation methods struggle to produce compact masks, especially in zero-shot segmentation. 
-            This issue probably stems from their straightforward assignment of learnable parameters to each Gaussian, resulting in a lack of robustness against cross-view inconsistent 2D machine-generated labels. 
-            Our method aims to address this problem by employing Dual Feature Fusion Network as Gaussians' segmentation field. 
-            Specifically, we first optimize 3D Gaussians under RGB supervision. 
-            After Gaussian Locating, DINO features extracted from images are applied through explicit unprojection, 
-            which are further incorporated with spatial features from the efficient point cloud processing network. 
-            Feature aggregation is utilized to fuse them in a global-to-local strategy for compact segmentation features. 
-            Experimental results show that our model outperforms baselines on both semantic and panoptic zero-shot segmentation task, 
-            meanwhile consumes less than 10% inference time compared to NeRF-based methods. 
+            Zero-shot neural scene segmentation, which reconstructs 3D neural segmentation field without manual annotations, serves as an effective way for scene understanding. 
+            However, existing models, especially the efficient 3D Gaussian-based methods, struggle to produce compact segmentation results.
+            This issue stems primarily from their redundant learnable attributes assigned on individual Gaussians, leading to a lack of robustness against the 3D-inconsistencies in zero-shot generated raw labels. 
+            To address this problem, our work, named Compact Segmented 3D Gaussians (CoSegGaussians), proposes the Feature Unprojection and Fusion module as the segmentation field, which utilizes a shallow decoder generalizable for all Gaussians based on high-level features. 
+            Specifically, leveraging the learned Gaussian geometric parameters, semantic-aware image-based features are introduced into the scene via our unprojection technique. 
+            The lifted features, together with spatial information, are fed into the multi-scale aggregation decoder to generate segmentation identities for all Gaussians. 
+            Furthermore, we design \textit{CoSeg Loss} to boost model robustness against 3D-inconsistent noises. 
+            Experimental results show that our model surpasses baselines on zero-shot semantic segmentation task, improving by $\sim10$\% mIoU over the best baseline. 
           </p>
         </div>
       </div>
@@ -220,10 +217,8 @@
         <h2 class="title is-3">Method</h2>
         <div class="content has-text-justified">
           <p>
-            Given only posed RGB images of a 3D scene, our method aims to build an expressive representation to capture geometry, appearance as well as compact segmenting identity of the scene. 
-            Our proposed model, CoSSegGaussians, enables compact novel-view 3D-consistent segmentation, 
-            while consuming much less rendering time compared to NeRF-based methods. 
-            The below figure provides an overview of CoSSegGaussians' architecture.
+            Given only posed RGB images of a 3D scene, our method aims to build an expressive representation to capture the scene's geometry, appearance together with the high-quality segmentation identities.
+            The proposed model, CoSegGaussians, enables compact neural scene segmentation, generating segmentation from novel views in a 3D-consistent fashion.
           </p>
         </div>
       </div>
